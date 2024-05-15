@@ -7,8 +7,8 @@ const Navbar = () => {
   const i = useSelector((state)=>state.cart.cart)
   const dispatch= useDispatch()
   return (
-    <div className='w-full'>
-        <div className='flex justify-between shadow-md p-5'>
+    <div className=''>
+        <div className='flex justify-between w-screen shadow-md p-5'>
             <h1>REDUC TOOLKIT</h1>
             <div>
                 <input onChange={(e)=>dispatch(setSearch(e.target.value))} className='outline-none text-1xl border rounded-md p-2 w-[300px]' type="text" placeholder='Search' />
