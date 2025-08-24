@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function LoadingPage() {
-  const [timeLeft, setTimeLeft] = useState(3); // ⏱️ 3 seconds
-  const navigate = useNavigate();
+  const [timeLeft, setTimeLeft] = useState(3); 
+
 
   useEffect(() => {
     if (timeLeft <= 0) {
-      navigate("/"); // auto redirect to home
+      window.location.href = "/";
       return;
     }
 
@@ -16,7 +15,7 @@ export default function LoadingPage() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, navigate]);
+  }, [timeLeft]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center">
